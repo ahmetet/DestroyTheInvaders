@@ -6,11 +6,24 @@ public class SpawnAreaProperties : MonoBehaviour
 {
     public bool isFull = false;
     private bool isFullPrev = false;
-    public int heroType = 0;
+    public Hero heroType;
+    public GameObject heroGameObject=null;
+
+    public enum Hero
+    {
+       Orc1,
+       Orc2,
+       Orc3,
+       Knight1,
+       Knight2,
+       Knight3
+    }
+  
 
     [SerializeField] SpawnAreaManager spawnAreaManager;
     void Start()
     {
+
         if (!spawnAreaManager.spawnAreas.Contains(this.gameObject))
         {
             spawnAreaManager.spawnAreas.Add(this.gameObject);
