@@ -7,18 +7,19 @@ public class SpawnAreaProperties : MonoBehaviour
     public bool isFull = false;
     private bool isFullPrev = false;
     public Hero heroType;
-    public GameObject heroGameObject=null;
+    public GameObject heroGameObject = null;
 
+     
     public enum Hero
     {
-       Orc1,
-       Orc2,
-       Orc3,
-       Knight1,
-       Knight2,
-       Knight3
+        Orc1,
+        Orc2,
+        Orc3,
+        Knight1,
+        Knight2,
+        Knight3
     }
-  
+
 
     [SerializeField] SpawnAreaManager spawnAreaManager;
     void Start()
@@ -55,9 +56,12 @@ public class SpawnAreaProperties : MonoBehaviour
             }
             spawnAreaManager.emptySpawnAreas.Add(this.gameObject);
         }
+        heroGameObject = null;
     }
     void Update()
     {
+        isFull = heroGameObject !=null;
+
         if (isFullPrev != isFull)
         {
             if (isFull)
@@ -70,5 +74,8 @@ public class SpawnAreaProperties : MonoBehaviour
             }
             isFullPrev = isFull;
         }
+         
+
+
     }
 }

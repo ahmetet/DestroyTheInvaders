@@ -170,9 +170,11 @@ GameObject:
   - component: {fileID: 1057599161969954103}
   - component: {fileID: 1057599161969954097}
   - component: {fileID: 1057599161969954096}
+  - component: {fileID: 4309121626359903988}
+  - component: {fileID: 4211883391285782788}
   m_Layer: 0
   m_Name: K2
-  m_TagString: Untagged
+  m_TagString: myHero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,6 +234,31 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4309121626359903988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057599161969954102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34fcd1b77da1cd4dae797bdba90467f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4211883391285782788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057599161969954102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b71d30d7ccdc74ca02daaa38bbdb2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroType: 4
 --- !u!1 &1057599162090399460
 GameObject:
   m_ObjectHideFlags: 0

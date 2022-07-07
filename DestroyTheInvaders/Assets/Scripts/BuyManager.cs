@@ -35,6 +35,7 @@ public class BuyManager : MonoBehaviour
         randomEmptySpawnArea.GetComponent<SpawnAreaProperties>().heroType = SpawnAreaProperties.Hero.Orc1;
         GameObject spawnedHero= GameObject.Instantiate(orcObject, randomEmptySpawnArea.transform);
         randomEmptySpawnArea.GetComponent<SpawnAreaProperties>().heroGameObject = spawnedHero;
+        
 
 
     }

@@ -171,9 +171,11 @@ GameObject:
   - component: {fileID: 6646296362938586692}
   - component: {fileID: 1864002925214631364}
   - component: {fileID: 7362535902457650962}
+  - component: {fileID: 5504683170723529881}
+  - component: {fileID: 6476778697301545237}
   m_Layer: 0
   m_Name: O3
-  m_TagString: Untagged
+  m_TagString: myHero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -233,6 +235,31 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5504683170723529881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216598843960138206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34fcd1b77da1cd4dae797bdba90467f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6476778697301545237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216598843960138206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b71d30d7ccdc74ca02daaa38bbdb2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroType: 2
 --- !u!1 &1273451579220959865
 GameObject:
   m_ObjectHideFlags: 0
