@@ -42,3 +42,12 @@ sysinfo.txt
 *.unitypackage
 DestroyTheInvaders/Library/Search/transactions.db
 DestroyTheInvaders/Library/InspectorExpandedItems.asset
+*.db
+DestroyTheInvaders/Library/Search/transactions.db
+DestroyTheInvaders/Library/SceneVisibilityState.asset
+DestroyTheInvaders/Library/Bee/TundraBuildState.state.map
+DestroyTheInvaders/Library/Bee/TundraBuildState.state
+DestroyTheInvaders/Library/Bee/tundra.log.json
+DestroyTheInvaders/Library/Bee/tundra.digestcache
+DestroyTheInvaders/Library/Bee/buildprogram0.traceevents
+DestroyTheInvaders/Library/Bee/backend_profiler1.traceevents
