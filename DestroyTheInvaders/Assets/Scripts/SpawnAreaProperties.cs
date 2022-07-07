@@ -45,7 +45,7 @@ public class SpawnAreaProperties : MonoBehaviour
             }
             spawnAreaManager.fullSpawnAreas.Add(this.gameObject);
         }
-    }
+    } 
     public void Add_SpawnAreaEmpty()
     {
         if (!spawnAreaManager.emptySpawnAreas.Contains(this.gameObject))
