@@ -7,12 +7,14 @@ public class GameManagerScript : MonoBehaviour
 
     public SpawnAreaManager spawnAreaManager;
     public GameObject spawnAreaBorders;
+ 
     public void Game_Start()
     {
         StartCoroutine(GameStartPRO());
     }
     IEnumerator GameStartPRO()
     {
+     
         spawnAreaBorders.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         foreach (GameObject SpawnArea in spawnAreaManager.spawnAreas)

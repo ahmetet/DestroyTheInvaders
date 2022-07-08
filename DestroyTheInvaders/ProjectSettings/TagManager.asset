@@ -8,6 +8,7 @@ TagManager:
   - myHero
   - SpawnAreaBorders
   - Enemy
+  - Dead
   layers:
   - Default
   - TransparentFX

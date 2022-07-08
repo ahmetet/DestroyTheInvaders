@@ -7,7 +7,10 @@ public class Hero_AutoMove : MonoBehaviour
 
     private bool targetBoundsInteracted = false;
     public bool goToEnemy = false;
- 
+    private void Start()
+    {
+        InvokeRepeating("Attack", 2.0f, 1f);
+    }
 
     public Transform FindTarget()
     {
@@ -41,12 +44,15 @@ public class Hero_AutoMove : MonoBehaviour
         return closest;
     }
 
+    private int HeroCount = 0;
     private void OnTriggerEnter(Collider other)
     {
+        
         if (goToEnemy)
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
+               
                 targetBoundsInteracted = true;
             }
         }
@@ -54,6 +60,7 @@ public class Hero_AutoMove : MonoBehaviour
         {
             if (other.gameObject.CompareTag("myHero"))
             {
+                
                 targetBoundsInteracted = true;
             }
         }
@@ -62,10 +69,12 @@ public class Hero_AutoMove : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        
         if (goToEnemy)
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
+               
                 targetBoundsInteracted = false;
             }
         }
@@ -73,6 +82,7 @@ public class Hero_AutoMove : MonoBehaviour
         {
             if (other.gameObject.CompareTag("myHero"))
             {
+                
                 targetBoundsInteracted = false;
             }
         }
@@ -81,25 +91,55 @@ public class Hero_AutoMove : MonoBehaviour
 
 
     Transform closestTransform;
+    private bool isAttackFinished = false;
     void Update()
     {
-        
-        if (!targetBoundsInteracted)
+        closestTransform = FindTarget();
+
+        if (closestTransform != null)
         {
-            closestTransform = FindTarget();
-            this.GetComponent<Animator>().SetBool("isWalking", true);
-            this.GetComponent<Animator>().SetBool("isIdle", false);
-            this.transform.LookAt(closestTransform, new Vector3(0f, 1f, 0f));
-            this.transform.localRotation = Quaternion.Euler(0f, this.transform.localRotation.eulerAngles.y, this.transform.localRotation.eulerAngles.z);
-            this.transform.position = Vector3.MoveTowards(this.transform.position, closestTransform.position, 0.3f * Time.deltaTime);
+            _other = closestTransform.gameObject;
+            if (!targetBoundsInteracted)
+            {
+
+                this.GetComponent<Animator>().SetBool("isWalking", true);
+                this.GetComponent<Animator>().SetBool("isIdle", false);
+                isAttackFinished = true;
+                this.transform.LookAt(closestTransform, new Vector3(0f, 1f, 0f));
+                this.transform.localRotation = Quaternion.Euler(0f, this.transform.localRotation.eulerAngles.y, this.transform.localRotation.eulerAngles.z);
+                this.transform.position = Vector3.MoveTowards(this.transform.position, closestTransform.position, 0.3f * Time.deltaTime);
+            }
+            else
+            {
+                this.GetComponent<Animator>().SetBool("isWalking", false);
+                this.GetComponent<Animator>().SetBool("isAttacking", true);
+                isAttackFinished = false;
+                
+            }
         }
         else
         {
             this.GetComponent<Animator>().SetBool("isWalking", false);
-            this.GetComponent<Animator>().SetBool("isAttacking", true);
+            this.GetComponent<Animator>().SetBool("isAttacking", false);
+            this.GetComponent<Animator>().SetBool("isIdle", true);
+            isAttackFinished = true;
+
         }
+
+        
     }
-    
+    GameObject _other = null;
+
+    public void Attack()
+    {
+        if (!isAttackFinished)
+        {
+            _other.GetComponent<HeroScript>().DecreaseHealth(GetComponent<HeroScript>().myForce);
+        }
+        
+    }
+     
+
     public void Vibrate()
     {
         Handheld.Vibrate();
