@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Dead
   - Coin
+  - GM
   layers:
   - Default
   - TransparentFX

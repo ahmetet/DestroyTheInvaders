@@ -11,10 +11,12 @@ public class HeroScript : MonoBehaviour
     public SpawnAreaProperties.Hero heroType;
     public float myForce = 0f;
     public float myDefense = 0f;
+    public GameManagerScript gameManagerScript;
 
     public bool isDead = false;
     private void Start()
     {
+        gameManagerScript = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManagerScript>();
         if (this.gameObject.CompareTag("Enemy")){
             healthBar.color = Color.red;
         }
@@ -79,6 +81,19 @@ public class HeroScript : MonoBehaviour
         if (isDead && lockDeath)
         {
             lockDeath = false;
+            int _playerCoin = Convert.ToInt32(GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text.Split(':')[1].Trim().ToString());
+
+            if (!this.GetComponent<Hero_AutoMove>().goToEnemy)
+            {
+                gameManagerScript.totalEnemy -= 1;
+                GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text = "COIN: " + (_playerCoin + 1).ToString();
+            }
+            else
+            {
+                gameManagerScript.totalPlayer -= 1;
+                GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text = "COIN: " + (_playerCoin - 1).ToString();
+            }
+
             this.gameObject.GetComponent<Animator>().SetBool("isWalking", false);
             this.gameObject.GetComponent<Animator>().SetBool("isAttacking", false);
             this.gameObject.GetComponent<Animator>().SetBool("isIdle", false);
@@ -88,16 +103,8 @@ public class HeroScript : MonoBehaviour
             Destroy(this.gameObject.GetComponent<Outline>());
             Destroy(this.gameObject.GetComponent<Hero_AutoMove>());
 
-            int _playerCoin = Convert.ToInt32(GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text.Split(':')[1].Trim().ToString());
-            
-            if (this.gameObject.CompareTag("Enemy"))
-            {
-                GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text = "COIN: " + (_playerCoin + 1).ToString();
-            }
-            else
-            {
-                GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text = "COIN: " + (_playerCoin - 1).ToString();
-            }
+           
+           
         }
     }
     public void DecreaseHealth(float val)
