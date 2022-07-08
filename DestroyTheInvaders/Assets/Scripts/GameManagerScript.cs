@@ -21,7 +21,7 @@ public class GameManagerScript : MonoBehaviour
             {
                 Destroy(SpawnArea.GetComponent<SpawnAreaProperties>().heroGameObject.GetComponent<MoveObjectScript>());
                 SpawnArea.GetComponent<SpawnAreaProperties>().heroGameObject.AddComponent<Hero_AutoMove>();
-                SpawnArea.GetComponent<SpawnAreaProperties>().heroGameObject.GetComponent<Rigidbody>().isKinematic = false;
+                
             }
             Destroy(SpawnArea.GetComponent<SpawnAreaProperties>());
             Destroy(SpawnArea.GetComponent<SpawnAreaHeroMagnetScript>());
