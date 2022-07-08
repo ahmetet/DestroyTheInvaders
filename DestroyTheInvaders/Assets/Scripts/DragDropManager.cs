@@ -20,6 +20,7 @@ public class DragDropManager : MonoBehaviour
                 if (heroObj.CompareTag("myHero"))
                 {
                     heroObj.GetComponent<MoveObjectScript>().enabled = true;
+                    heroObj.GetComponent<Outline>().enabled = true;
                 }
             }
 

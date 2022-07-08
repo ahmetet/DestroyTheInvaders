@@ -7,7 +7,7 @@ public class SpawnAreaHeroMagnetScript : MonoBehaviour
     private SpawnAreaProperties spawnAreaProperties;
     private Outline outline;
 
-    public GameObject Orc2, Orc3,Orc4, Knight2, Knight3;
+    public GameObject Orc2, Orc3,Orc4, Knight2, Knight3,Knight4;
 
     private bool mergeTrigger = false;
     private void OnTriggerEnter(Collider other)
@@ -81,17 +81,33 @@ public class SpawnAreaHeroMagnetScript : MonoBehaviour
         }
         else if (_hero == SpawnAreaProperties.Hero.Knight1)
         {
-
+            spawnAreaProperties.isFull = true;
+            GameObject spawnedHero = GameObject.Instantiate(Knight2, this.transform);
+            spawnedHero.transform.SetParent(this.transform);
+            spawnedHero.transform.localPosition = Vector3.zero;
+            spawnAreaProperties.heroGameObject = spawnedHero;
         }
         else if (_hero == SpawnAreaProperties.Hero.Knight2)
         {
-
+            spawnAreaProperties.isFull = true;
+            GameObject spawnedHero = GameObject.Instantiate(Knight3, this.transform);
+            spawnedHero.transform.SetParent(this.transform);
+            spawnedHero.transform.localPosition = Vector3.zero;
+            spawnAreaProperties.heroGameObject = spawnedHero;
         }
-         
+        else if (_hero == SpawnAreaProperties.Hero.Knight3)
+        {
+            spawnAreaProperties.isFull = true;
+            GameObject spawnedHero = GameObject.Instantiate(Knight4, this.transform);
+            spawnedHero.transform.SetParent(this.transform);
+            spawnedHero.transform.localPosition = Vector3.zero;
+            spawnAreaProperties.heroGameObject = spawnedHero;
+        }
 
-        
-       
-        
+
+
+
+
     }
     public void TurnOffLights()
     {

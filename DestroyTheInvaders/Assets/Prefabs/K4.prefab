@@ -617,14 +617,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7320585345246633402}
   - component: {fileID: 7262131817594247542}
-  - component: {fileID: 6360595766844071093}
-  - component: {fileID: 4363780191420789356}
-  - component: {fileID: -8028992291695498038}
-  - component: {fileID: 6743899010460496401}
-  - component: {fileID: -808900952865468932}
-  - component: {fileID: 8677186984958211502}
+  - component: {fileID: -7113790504063921295}
+  - component: {fileID: 567733705383537077}
+  - component: {fileID: -6854861564425561957}
+  - component: {fileID: -549630313292990451}
+  - component: {fileID: -6288075111416518556}
+  - component: {fileID: 4180260781733452291}
   m_Layer: 0
-  m_Name: K1
+  m_Name: K4
   m_TagString: myHero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,7 +639,7 @@ Transform:
   m_GameObject: {fileID: 7321245410973775800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1904763, y: 9.259261, z: 0.83333343}
+  m_LocalScale: {x: 2.5714283, y: 20.000004, z: 1.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7320585344792543732}
@@ -667,7 +667,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!143 &6360595766844071093
+--- !u!143 &-7113790504063921295
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -685,7 +685,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4363780191420789356
+--- !u!114 &567733705383537077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -697,8 +697,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b71d30d7ccdc74ca02daaa38bbdb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroType: 4
---- !u!136 &-8028992291695498038
+  heroType: 7
+--- !u!136 &-6854861564425561957
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -712,7 +712,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: -0.08798979}
---- !u!114 &6743899010460496401
+--- !u!114 &-549630313292990451
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -729,7 +729,7 @@ MonoBehaviour:
   PlayerPos: {x: 0, y: 0, z: 0}
   isMoving: 0
   isPermitted: 1
---- !u!54 &-808900952865468932
+--- !u!54 &-6288075111416518556
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -745,7 +745,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &8677186984958211502
+--- !u!114 &4180260781733452291
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

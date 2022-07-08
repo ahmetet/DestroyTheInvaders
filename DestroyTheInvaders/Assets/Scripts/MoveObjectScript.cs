@@ -86,7 +86,8 @@ public class MoveObjectScript : MonoBehaviour
     {
         spawnArea = this.transform.parent.gameObject;
         this.transform.localPosition = Vector3.zero;
-        this.enabled = false;  
+        this.enabled = false;
+        this.GetComponent<Outline>().enabled = false;
     }
     
    
