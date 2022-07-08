@@ -6,6 +6,7 @@ public class SpawnAreaProperties : MonoBehaviour
 {
     public bool isFull = false;
     private bool isFullPrev = false;
+    public bool isEnemy = false;
     public GameObject heroGameObject = null;
 
      

@@ -10,12 +10,14 @@ public class SpawnAreaHeroMagnetScript : MonoBehaviour
     public GameObject Orc2, Orc3,Orc4, Knight2, Knight3,Knight4;
 
     private bool mergeTrigger = false;
+    private GameObject _targetObj = null;
     private void OnTriggerEnter(Collider other)
     {
        
         GameObject targetHero = other.gameObject;
         if (!spawnAreaProperties.isFull)
         {
+            Handheld.Vibrate();
             spawnAreaProperties.heroGameObject = targetHero;
             targetHero.transform.SetParent(this.transform);
             outline.OutlineColor = Color.green;
@@ -23,22 +25,31 @@ public class SpawnAreaHeroMagnetScript : MonoBehaviour
         }
         else
         {
-            if (targetHero!=spawnAreaProperties.heroGameObject&& targetHero.GetComponent<HeroScript>().heroType == spawnAreaProperties.heroGameObject.GetComponent<HeroScript>().heroType)
+            try
             {
-                if(targetHero.GetComponent<HeroScript>().heroType==SpawnAreaProperties.Hero.Orc4 || targetHero.GetComponent<HeroScript>().heroType == SpawnAreaProperties.Hero.Knight4)
+                if (targetHero != spawnAreaProperties.heroGameObject && targetHero.GetComponent<HeroScript>().heroType == spawnAreaProperties.heroGameObject.GetComponent<HeroScript>().heroType)
                 {
-                    //Final merge
+                    if (targetHero.GetComponent<HeroScript>().heroType == SpawnAreaProperties.Hero.Orc4 || targetHero.GetComponent<HeroScript>().heroType == SpawnAreaProperties.Hero.Knight4)
+                    {
+                        //Final merge
+                    }
+                    else
+                    {
+
+                        mergeTrigger = true;
+                        _targetObj = targetHero;
+                        outline.enabled = true;
+
+                    }
                 }
                 else
                 {
-                    targetHero.transform.SetParent(this.transform);
-                    mergeTrigger = true;
-                    StartCoroutine(Merge(targetHero));
+                    outline.enabled = false;
                 }
             }
-            else
+            catch
             {
-                outline.enabled = false;
+
             }
                
 
@@ -49,7 +60,8 @@ public class SpawnAreaHeroMagnetScript : MonoBehaviour
     public IEnumerator Merge(GameObject _target)
     {
         SpawnAreaProperties.Hero _hero = _target.GetComponent<HeroScript>().heroType;
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.1f);
+        _target.transform.SetParent(this.transform);
         mergeTrigger = false;
         Destroy(spawnAreaProperties.heroGameObject);
         Destroy(_target);
@@ -103,7 +115,8 @@ public class SpawnAreaHeroMagnetScript : MonoBehaviour
             spawnedHero.transform.localPosition = Vector3.zero;
             spawnAreaProperties.heroGameObject = spawnedHero;
         }
-
+        Handheld.Vibrate();
+        yield return null;
 
 
 
@@ -124,8 +137,14 @@ public class SpawnAreaHeroMagnetScript : MonoBehaviour
         
         
     }
+    private void Update()
+    {
+        if(mergeTrigger && Input.GetMouseButtonUp(0))
+        {
+            StartCoroutine(Merge(_targetObj));
+        }
+    }
 
-    
     private void OnTriggerExit(Collider other)
     {
         if (!mergeTrigger)
@@ -136,7 +155,8 @@ public class SpawnAreaHeroMagnetScript : MonoBehaviour
             {
                 spawnAreaProperties.heroGameObject = null;
             }
-        } 
+        }
+        mergeTrigger = false;
         
 
     }
@@ -144,7 +164,11 @@ public class SpawnAreaHeroMagnetScript : MonoBehaviour
     void Start()
     {
         outline = this.GetComponent<Outline>();
-        spawnAreaProperties = this.GetComponent<SpawnAreaProperties>();       
+        spawnAreaProperties = this.GetComponent<SpawnAreaProperties>();
+        if (spawnAreaProperties.isEnemy)
+        {
+            Destroy(this);
+        }
     }
 
    
