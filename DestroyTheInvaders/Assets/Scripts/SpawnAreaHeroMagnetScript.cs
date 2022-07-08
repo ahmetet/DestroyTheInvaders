@@ -61,6 +61,8 @@ public class SpawnAreaHeroMagnetScript : MonoBehaviour
     {
         SpawnAreaProperties.Hero _hero = _target.GetComponent<HeroScript>().heroType;
         //yield return new WaitForSeconds(0.1f);
+        _target.transform.parent.GetComponent<SpawnAreaProperties>().heroGameObject = null;
+        _target.transform.parent.GetComponent<SpawnAreaProperties>().isFull = false;
         _target.transform.SetParent(this.transform);
         mergeTrigger = false;
         Destroy(spawnAreaProperties.heroGameObject);
