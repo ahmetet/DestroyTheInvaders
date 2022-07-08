@@ -107,7 +107,7 @@ public class Hero_AutoMove : MonoBehaviour
                 isAttackFinished = true;
                 this.transform.LookAt(closestTransform, new Vector3(0f, 1f, 0f));
                 this.transform.localRotation = Quaternion.Euler(0f, this.transform.localRotation.eulerAngles.y, this.transform.localRotation.eulerAngles.z);
-                this.transform.position = Vector3.MoveTowards(this.transform.position, closestTransform.position + new Vector3(Random.Range(0.05f,0.1f), 0f, Random.Range(0.05f,0.1f)), 0.3f * Time.deltaTime);
+                this.transform.position = Vector3.MoveTowards(this.transform.position, closestTransform.position + new Vector3(Random.Range(0.05f,0.3f), 0f, Random.Range(0.05f,0.1f)), 0.3f * Time.deltaTime);
             }
             else
             {

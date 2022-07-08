@@ -63,6 +63,11 @@ public class HeroScript : MonoBehaviour
     void Update()
     {
 
+ 
+
+        healthBar.transform.LookAt(healthBar.transform.position + Camera.main.transform.rotation * Vector3.back, Camera.main.transform.rotation * Vector3.up);
+
+
         healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, Health, Time.deltaTime*2f);
         if (healthBar.fillAmount <= 0f)
         {
