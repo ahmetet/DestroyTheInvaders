@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,9 @@ public class HeroScript : MonoBehaviour
     public bool isDead = false;
     private void Start()
     {
+        if (this.gameObject.CompareTag("Enemy")){
+            healthBar.color = Color.red;
+        }
         if (heroType == SpawnAreaProperties.Hero.Knight1)
         {
             myForce = 0.07f;
@@ -55,6 +59,7 @@ public class HeroScript : MonoBehaviour
             myDefense = 0.15f;
         }
     }
+    private bool lockDeath = true;
     void Update()
     {
 
@@ -66,8 +71,9 @@ public class HeroScript : MonoBehaviour
             this.gameObject.tag = "Dead"; 
         }
 
-        if (isDead)
+        if (isDead && lockDeath)
         {
+            lockDeath = false;
             this.gameObject.GetComponent<Animator>().SetBool("isWalking", false);
             this.gameObject.GetComponent<Animator>().SetBool("isAttacking", false);
             this.gameObject.GetComponent<Animator>().SetBool("isIdle", false);
@@ -76,10 +82,22 @@ public class HeroScript : MonoBehaviour
             Destroy(this.gameObject.GetComponent<MoveObjectScript>());
             Destroy(this.gameObject.GetComponent<Outline>());
             Destroy(this.gameObject.GetComponent<Hero_AutoMove>());
+
+            int _playerCoin = Convert.ToInt32(GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text.Split(':')[1].Trim().ToString());
+            
+            if (this.gameObject.CompareTag("Enemy"))
+            {
+                GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text = "COIN: " + (_playerCoin + 1).ToString();
+            }
+            else
+            {
+                GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text = "COIN: " + (_playerCoin - 1).ToString();
+            }
         }
     }
     public void DecreaseHealth(float val)
     {
+
         Health = Health - ( val + myDefense);
         if (Health <= 0f)
         {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class BuyManager : MonoBehaviour
 
     void Start()
     {
-       
+        GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text = "COIN: "+playerCoin.ToString();
     }
 
     private void Update()
@@ -30,20 +31,24 @@ public class BuyManager : MonoBehaviour
     {
         playerCoin -= 1;
 
-        GameObject randomEmptySpawnArea = spawnAreaManager.emptySpawnAreas[Random.Range(0, spawnAreaManager.emptySpawnAreas.Count)];
+        GameObject randomEmptySpawnArea = spawnAreaManager.emptySpawnAreas[UnityEngine.Random.Range(0, spawnAreaManager.emptySpawnAreas.Count)];
         randomEmptySpawnArea.GetComponent<SpawnAreaProperties>().isFull = true;
         GameObject spawnedHero= GameObject.Instantiate(orcObject, randomEmptySpawnArea.transform);
         randomEmptySpawnArea.GetComponent<SpawnAreaProperties>().heroGameObject = spawnedHero;
-      
+
+        GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text = "COIN: " + playerCoin.ToString();
+
     }
   
     public void Buy_Knight()
     {
         playerCoin -= 1;
 
-        GameObject randomEmptySpawnArea = spawnAreaManager.emptySpawnAreas[Random.Range(0, spawnAreaManager.emptySpawnAreas.Count)];
+        GameObject randomEmptySpawnArea = spawnAreaManager.emptySpawnAreas[UnityEngine.Random.Range(0, spawnAreaManager.emptySpawnAreas.Count)];
         randomEmptySpawnArea.GetComponent<SpawnAreaProperties>().isFull = true;
         GameObject spawnedHero = GameObject.Instantiate(knightObject, randomEmptySpawnArea.transform);
         randomEmptySpawnArea.GetComponent<SpawnAreaProperties>().heroGameObject = spawnedHero;
+
+        GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text = "COIN: " + playerCoin.ToString();
     }
 }

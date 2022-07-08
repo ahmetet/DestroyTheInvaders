@@ -19,8 +19,15 @@ public class DragDropManager : MonoBehaviour
                 heroObj = hitInfo.collider.gameObject;
                 if (heroObj.CompareTag("myHero"))
                 {
-                    heroObj.GetComponent<MoveObjectScript>().enabled = true;
-                    heroObj.GetComponent<Outline>().enabled = true;
+                    try
+                    {
+                        heroObj.GetComponent<MoveObjectScript>().enabled = true;
+                        heroObj.GetComponent<Outline>().enabled = true;
+                    }
+                    catch
+                    {
+
+                    }
                 }
             }
 
