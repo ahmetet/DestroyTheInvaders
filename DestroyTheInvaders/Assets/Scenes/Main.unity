@@ -362,7 +362,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  heroType: 0
   heroGameObject: {fileID: 0}
   spawnAreaManager: {fileID: 1918279281}
 --- !u!114 &71564221
@@ -377,6 +376,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9eb4b7d72b3be45910d8ba39016a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Orc2: {fileID: 1216598843960138206, guid: 7c63bb454359c174d8355e81ff273360, type: 3}
+  Orc3: {fileID: 1216598843960138206, guid: db8bd4c7586d8b24abab6ca02692516c, type: 3}
+  Orc4: {fileID: 1216598843960138206, guid: 4abc7f20af890c8418c4e0b89704374e, type: 3}
+  Knight2: {fileID: 0}
+  Knight3: {fileID: 0}
 --- !u!1 &150136089
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +431,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  heroType: 0
   heroGameObject: {fileID: 0}
   spawnAreaManager: {fileID: 1918279281}
 --- !u!114 &150136092
@@ -549,6 +552,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9eb4b7d72b3be45910d8ba39016a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Orc2: {fileID: 1216598843960138206, guid: 7c63bb454359c174d8355e81ff273360, type: 3}
+  Orc3: {fileID: 1216598843960138206, guid: db8bd4c7586d8b24abab6ca02692516c, type: 3}
+  Orc4: {fileID: 1216598843960138206, guid: 4abc7f20af890c8418c4e0b89704374e, type: 3}
+  Knight2: {fileID: 0}
+  Knight3: {fileID: 0}
 --- !u!1001 &218334716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -835,7 +843,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  heroType: 0
   heroGameObject: {fileID: 0}
   spawnAreaManager: {fileID: 1918279281}
 --- !u!114 &454475954
@@ -957,6 +964,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9eb4b7d72b3be45910d8ba39016a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Orc2: {fileID: 1216598843960138206, guid: 7c63bb454359c174d8355e81ff273360, type: 3}
+  Orc3: {fileID: 1216598843960138206, guid: db8bd4c7586d8b24abab6ca02692516c, type: 3}
+  Orc4: {fileID: 1216598843960138206, guid: 4abc7f20af890c8418c4e0b89704374e, type: 3}
+  Knight2: {fileID: 0}
+  Knight3: {fileID: 0}
 --- !u!1 &505620265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,7 +1200,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  heroType: 0
   heroGameObject: {fileID: 0}
   spawnAreaManager: {fileID: 1918279281}
 --- !u!114 &646948858
@@ -1310,6 +1321,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9eb4b7d72b3be45910d8ba39016a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Orc2: {fileID: 1216598843960138206, guid: 7c63bb454359c174d8355e81ff273360, type: 3}
+  Orc3: {fileID: 1216598843960138206, guid: db8bd4c7586d8b24abab6ca02692516c, type: 3}
+  Orc4: {fileID: 1216598843960138206, guid: 4abc7f20af890c8418c4e0b89704374e, type: 3}
+  Knight2: {fileID: 0}
+  Knight3: {fileID: 0}
 --- !u!1 &678255602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,7 +1472,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  heroType: 0
   heroGameObject: {fileID: 0}
   spawnAreaManager: {fileID: 1918279281}
 --- !u!114 &745427163
@@ -1578,6 +1593,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9eb4b7d72b3be45910d8ba39016a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Orc2: {fileID: 1216598843960138206, guid: 7c63bb454359c174d8355e81ff273360, type: 3}
+  Orc3: {fileID: 1216598843960138206, guid: db8bd4c7586d8b24abab6ca02692516c, type: 3}
+  Orc4: {fileID: 1216598843960138206, guid: 4abc7f20af890c8418c4e0b89704374e, type: 3}
+  Knight2: {fileID: 0}
+  Knight3: {fileID: 0}
 --- !u!1 &748006957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,7 +1978,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  heroType: 0
   heroGameObject: {fileID: 0}
   spawnAreaManager: {fileID: 1918279281}
 --- !u!114 &961173485
@@ -2080,6 +2099,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9eb4b7d72b3be45910d8ba39016a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Orc2: {fileID: 1216598843960138206, guid: 7c63bb454359c174d8355e81ff273360, type: 3}
+  Orc3: {fileID: 1216598843960138206, guid: db8bd4c7586d8b24abab6ca02692516c, type: 3}
+  Orc4: {fileID: 1216598843960138206, guid: 4abc7f20af890c8418c4e0b89704374e, type: 3}
+  Knight2: {fileID: 0}
+  Knight3: {fileID: 0}
 --- !u!1 &970738383
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,7 +2441,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  heroType: 0
   heroGameObject: {fileID: 0}
   spawnAreaManager: {fileID: 1918279281}
 --- !u!114 &1023985951
@@ -2432,6 +2455,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9eb4b7d72b3be45910d8ba39016a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Orc2: {fileID: 1216598843960138206, guid: 7c63bb454359c174d8355e81ff273360, type: 3}
+  Orc3: {fileID: 1216598843960138206, guid: db8bd4c7586d8b24abab6ca02692516c, type: 3}
+  Orc4: {fileID: 1216598843960138206, guid: 4abc7f20af890c8418c4e0b89704374e, type: 3}
+  Knight2: {fileID: 0}
+  Knight3: {fileID: 0}
 --- !u!1001 &1079310490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2824,7 +2852,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  heroType: 0
   heroGameObject: {fileID: 0}
   spawnAreaManager: {fileID: 1918279281}
 --- !u!114 &1169393307
@@ -2839,6 +2866,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9eb4b7d72b3be45910d8ba39016a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Orc2: {fileID: 1216598843960138206, guid: 7c63bb454359c174d8355e81ff273360, type: 3}
+  Orc3: {fileID: 1216598843960138206, guid: db8bd4c7586d8b24abab6ca02692516c, type: 3}
+  Orc4: {fileID: 1216598843960138206, guid: 4abc7f20af890c8418c4e0b89704374e, type: 3}
+  Knight2: {fileID: 0}
+  Knight3: {fileID: 0}
 --- !u!1 &1203523675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2996,7 +3028,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  heroType: 0
   heroGameObject: {fileID: 0}
   spawnAreaManager: {fileID: 1918279281}
 --- !u!114 &1203523682
@@ -3011,6 +3042,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9eb4b7d72b3be45910d8ba39016a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Orc2: {fileID: 1216598843960138206, guid: 7c63bb454359c174d8355e81ff273360, type: 3}
+  Orc3: {fileID: 1216598843960138206, guid: db8bd4c7586d8b24abab6ca02692516c, type: 3}
+  Orc4: {fileID: 1216598843960138206, guid: 4abc7f20af890c8418c4e0b89704374e, type: 3}
+  Knight2: {fileID: 0}
+  Knight3: {fileID: 0}
 --- !u!1 &1209972558
 GameObject:
   m_ObjectHideFlags: 0
@@ -3061,7 +3097,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  heroType: 0
   heroGameObject: {fileID: 0}
   spawnAreaManager: {fileID: 1918279281}
 --- !u!114 &1209972561
@@ -3183,6 +3218,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9eb4b7d72b3be45910d8ba39016a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Orc2: {fileID: 1216598843960138206, guid: 7c63bb454359c174d8355e81ff273360, type: 3}
+  Orc3: {fileID: 1216598843960138206, guid: db8bd4c7586d8b24abab6ca02692516c, type: 3}
+  Orc4: {fileID: 1216598843960138206, guid: 4abc7f20af890c8418c4e0b89704374e, type: 3}
+  Knight2: {fileID: 0}
+  Knight3: {fileID: 0}
 --- !u!1 &1261009086
 GameObject:
   m_ObjectHideFlags: 0
@@ -3340,7 +3380,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  heroType: 0
   heroGameObject: {fileID: 0}
   spawnAreaManager: {fileID: 1918279281}
 --- !u!114 &1261009093
@@ -3355,6 +3394,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9eb4b7d72b3be45910d8ba39016a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Orc2: {fileID: 1216598843960138206, guid: 7c63bb454359c174d8355e81ff273360, type: 3}
+  Orc3: {fileID: 1216598843960138206, guid: db8bd4c7586d8b24abab6ca02692516c, type: 3}
+  Orc4: {fileID: 1216598843960138206, guid: 4abc7f20af890c8418c4e0b89704374e, type: 3}
+  Knight2: {fileID: 0}
+  Knight3: {fileID: 0}
 --- !u!1 &1307748094
 GameObject:
   m_ObjectHideFlags: 0
@@ -3547,7 +3591,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  heroType: 0
   heroGameObject: {fileID: 0}
   spawnAreaManager: {fileID: 1918279281}
 --- !u!114 &1418184847
@@ -3562,6 +3605,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9eb4b7d72b3be45910d8ba39016a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Orc2: {fileID: 1216598843960138206, guid: 7c63bb454359c174d8355e81ff273360, type: 3}
+  Orc3: {fileID: 1216598843960138206, guid: db8bd4c7586d8b24abab6ca02692516c, type: 3}
+  Orc4: {fileID: 1216598843960138206, guid: 4abc7f20af890c8418c4e0b89704374e, type: 3}
+  Knight2: {fileID: 0}
+  Knight3: {fileID: 0}
 --- !u!1 &1512389283
 GameObject:
   m_ObjectHideFlags: 0

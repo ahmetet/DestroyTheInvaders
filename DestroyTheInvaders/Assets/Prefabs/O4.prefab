@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 4695784947369259456}
   - component: {fileID: 3664275824271329874}
   m_Layer: 0
-  m_Name: O2
+  m_Name: O4
   m_TagString: myHero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 1216598843960138206}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7142853, y: 13.333332, z: 1.2}
+  m_LocalScale: {x: 2.5714283, y: 20.000004, z: 1.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 217075163224416008}
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b71d30d7ccdc74ca02daaa38bbdb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroType: 1
+  heroType: 2
 --- !u!136 &-6541773098041841927
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -32,20 +32,17 @@ public class BuyManager : MonoBehaviour
 
         GameObject randomEmptySpawnArea = spawnAreaManager.emptySpawnAreas[Random.Range(0, spawnAreaManager.emptySpawnAreas.Count)];
         randomEmptySpawnArea.GetComponent<SpawnAreaProperties>().isFull = true;
-        randomEmptySpawnArea.GetComponent<SpawnAreaProperties>().heroType = SpawnAreaProperties.Hero.Orc1;
         GameObject spawnedHero= GameObject.Instantiate(orcObject, randomEmptySpawnArea.transform);
         randomEmptySpawnArea.GetComponent<SpawnAreaProperties>().heroGameObject = spawnedHero;
-        
-
-
+      
     }
+  
     public void Buy_Knight()
     {
         playerCoin -= 1;
 
         GameObject randomEmptySpawnArea = spawnAreaManager.emptySpawnAreas[Random.Range(0, spawnAreaManager.emptySpawnAreas.Count)];
         randomEmptySpawnArea.GetComponent<SpawnAreaProperties>().isFull = true;
-        randomEmptySpawnArea.GetComponent<SpawnAreaProperties>().heroType = SpawnAreaProperties.Hero.Knight1;
         GameObject spawnedHero = GameObject.Instantiate(knightObject, randomEmptySpawnArea.transform);
         randomEmptySpawnArea.GetComponent<SpawnAreaProperties>().heroGameObject = spawnedHero;
     }

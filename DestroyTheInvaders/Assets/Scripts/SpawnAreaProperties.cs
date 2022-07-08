@@ -6,7 +6,6 @@ public class SpawnAreaProperties : MonoBehaviour
 {
     public bool isFull = false;
     private bool isFullPrev = false;
-    public Hero heroType;
     public GameObject heroGameObject = null;
 
      
@@ -15,9 +14,11 @@ public class SpawnAreaProperties : MonoBehaviour
         Orc1,
         Orc2,
         Orc3,
+        Orc4,
         Knight1,
         Knight2,
-        Knight3
+        Knight3,
+        Knight4
     }
 
 
