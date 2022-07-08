@@ -86,6 +86,7 @@ public class HeroScript : MonoBehaviour
             if (!this.GetComponent<Hero_AutoMove>().goToEnemy)
             {
                 gameManagerScript.totalEnemy -= 1;
+                
                 GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text = "COIN: " + (_playerCoin + 1).ToString();
             }
             else
@@ -93,7 +94,7 @@ public class HeroScript : MonoBehaviour
                 gameManagerScript.totalPlayer -= 1;
                 GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text = "COIN: " + (_playerCoin - 1).ToString();
             }
-
+            gameManagerScript.CheckEnd();
             this.gameObject.GetComponent<Animator>().SetBool("isWalking", false);
             this.gameObject.GetComponent<Animator>().SetBool("isAttacking", false);
             this.gameObject.GetComponent<Animator>().SetBool("isIdle", false);

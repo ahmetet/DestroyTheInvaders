@@ -5313,6 +5313,7 @@ MonoBehaviour:
   - {fileID: 142127104}
   - {fileID: 680008379}
   spawnAreaManager: {fileID: 1918279281}
+  gameManagerScript: {fileID: 327467912}
   RandomUnitCount: 0
 --- !u!1 &1614603281
 GameObject:

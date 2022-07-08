@@ -10,6 +10,7 @@ public class GameManagerScript : MonoBehaviour
     public SpawnAreaManager spawnAreaManager;
     public GameObject spawnAreaBorders;
 
+    public BuyManager buyManager;
     public Text resultText;
     public CanvasGroup canvasGroupResult;
 
@@ -17,9 +18,15 @@ public class GameManagerScript : MonoBehaviour
     public int totalPlayer = 0;
 
     private bool isGameStarted = false;
+    
     public void Game_Start()
     {
-        StartCoroutine(GameStartPRO());
+        if (buyManager.playerCoin != 12)
+        {
+            StartCoroutine(GameStartPRO());
+        }
+        
+        
     }
     IEnumerator GameStartPRO()
     {
@@ -46,7 +53,7 @@ public class GameManagerScript : MonoBehaviour
         foreach (GameObject EnemyHero in spawnAreaManager.enemyHeros)
         {
             EnemyHero.AddComponent<Hero_AutoMove>().goToEnemy = false;
-            totalEnemy += 1;
+           
 
         }
 
@@ -59,53 +66,76 @@ public class GameManagerScript : MonoBehaviour
         SceneManager.LoadScene(scene.name);
     }
 
-    private void Update()
+    public void CheckEnd()
+    {
+        Invoke("_checkend", 2f);
+    }
+    public void _checkend()
     {
         if (isGameStarted)
         {
 
 
+
+
             if (totalEnemy <= 0 && totalPlayer > 0)
             {
                 //Win
-                resultText.text = "WIN";
-                if (canvasGroupResult.alpha <= 0.9)
-                {
 
-                    canvasGroupResult.blocksRaycasts = true;
-                    canvasGroupResult.interactable = true;
-                    canvasGroupResult.alpha = Mathf.MoveTowards(canvasGroupResult.alpha, 0.9f, Time.deltaTime / 10f);
-                }
+                canvasGroupResult.gameObject.SetActive(true);
+                resultText.text = "WIN";
+
+
+                canvasGroupResult.blocksRaycasts = true;
+                canvasGroupResult.interactable = true;
+                canvasGroupResult.alpha = 0.9f;
+
             }
             else if (totalEnemy > 0 && totalPlayer <= 0)
             {
                 //Lost
+                canvasGroupResult.gameObject.SetActive(true);
                 resultText.text = "LOSE";
-                if (canvasGroupResult.alpha <= 0.9)
-                {
 
-                    canvasGroupResult.blocksRaycasts = true;
-                    canvasGroupResult.interactable = true;
-                    canvasGroupResult.alpha = Mathf.MoveTowards(canvasGroupResult.alpha, 0.9f, Time.deltaTime / 10f);
-                }
+
+                canvasGroupResult.blocksRaycasts = true;
+                canvasGroupResult.interactable = true;
+                canvasGroupResult.alpha = 0.9f;
+
             }
             else if (totalPlayer <= 0 && totalEnemy <= 0)
             {
+                canvasGroupResult.gameObject.SetActive(true);
                 resultText.text = "DRAWN";
-                if (canvasGroupResult.alpha <= 0.9)
-                {
-                    canvasGroupResult.blocksRaycasts = true;
-                    canvasGroupResult.interactable = true;
-                    canvasGroupResult.alpha = Mathf.MoveTowards(canvasGroupResult.alpha, 0.9f, Time.deltaTime / 10f);
-                }
-            }
 
+                canvasGroupResult.blocksRaycasts = true;
+                canvasGroupResult.interactable = true;
+                canvasGroupResult.alpha = 0.9f;
+
+            }
         }
+    }
+
+    private void Update()
+    {
+        
+        
 
     }
     public void HidePanel(GameObject panel)
     {
-        panel.SetActive(false);
+        if (buyManager.playerCoin != 12)
+        {
+            panel.SetActive(false);
+        }
     }
-    
+
+    private void Start()
+    {
+        canvasGroupResult.blocksRaycasts = false;
+        canvasGroupResult.interactable = false;
+        canvasGroupResult.alpha = 0f;
+        canvasGroupResult.gameObject.SetActive(false);
+    }
+
 }

@@ -8,6 +8,7 @@ public class RandomEnemySpawner : MonoBehaviour
     public List<GameObject> Heroes;
     public List<GameObject> EnemySpawnAreas;
     public SpawnAreaManager spawnAreaManager;
+    public GameManagerScript gameManagerScript;
   
     public int RandomUnitCount = 0;
     void Start()
@@ -28,6 +29,7 @@ public class RandomEnemySpawner : MonoBehaviour
             spawnedHero.GetComponent<Outline>().enabled = true;
             spawnedHero.tag = "Enemy";
             spawnedHero.transform.localRotation = this.gameObject.transform.localRotation;
+            gameManagerScript.totalEnemy += 1;
             x = x + 1;
         }
 
